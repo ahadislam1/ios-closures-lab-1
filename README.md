@@ -24,6 +24,18 @@ Hello Closures!
 Hello Closures!
 Hello Closures!
 ```
+answer:
+```swift
+func applyKTimes(_ K: Int, _ closure: () -> () ) {
+    for _ in 1...K {
+        closure()
+    }
+}
+
+applyKTimes(4) {
+    print("Hello Closures!")
+}
+```
 
 
 ## Question 2
@@ -37,6 +49,15 @@ Input: `let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]`
 
 Expected values: `multiples = [3, 6, 9, 3, 12]`
 
+answer:
+```swift
+let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]
+let multiples = numbers.filter({$0 % 3 == 0} )
+
+print(numbers)
+print(multiples)
+```
+
 
 ## Question 3
 
@@ -47,7 +68,11 @@ Input: `let numbers = [4, 7, 1, 9, 6, 5, 6, 9]`
 
 Output: `9`
 
-
+answer:
+```swift
+let numbers1 = [4, 7, 1, 9, 6, 5, 6, 9]
+print(numbers1.reduce(0) { $0 > $1 ? $0 : $1 })
+```
 ## Question 4
 
 Join all the strings from `strings` into one using `reduce`. Add spaces in between strings. Print your result.
@@ -56,8 +81,12 @@ Example:
 Input: `let strings = ["We", "Heart", "Swift"]`
 
 Output: `"We Heart Swift"`
+answer:
+```swift
+let strings = ["We", "Heart", "Swift"]
+print(strings.reduce("", { $0 == "" ? $1 : $0 + " " + $1}))
 
-
+```
 ## Question 5
 
 `let cities = ["Shanghai", "Beijing", "Delhi", "Lagos", "Tianjin", "Karachi", "Karachi", "Tokyo", "Guangzhou", "Mumbai", "Moscow", "São Paulo"]`
